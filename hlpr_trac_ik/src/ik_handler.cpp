@@ -78,6 +78,10 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
   ros::NodeHandle nh("~"); // Private handler for parameters
 
+
+
+  std::cout << "IK Service working..." << std::endl;
+
   // Store parameters from the param server
   std::string _base_chain;
   std::string _end_chain;
@@ -86,8 +90,9 @@ int main(int argc, char **argv)
   bool _dist_flag;
 
   // Get parameters for the IK solver
-  nh.param("base_chain", _base_chain, std::string("linear_actuator_link"));
-  nh.param("end_chain", _end_chain, std::string("right_ee_link"));
+  nh.param("base_chain", _base_chain, std::string("torso_lift_link"));
+  nh.param("end_chain", _end_chain, std::string("gripper_link"));
+  // nh.param("end_chain", _end_chain, std::string("l_gripper_finger_link"));
   nh.param("timeout_in_sec", _timeout_in_secs, 0.005);
   nh.param("error", _error, 1e-5);
   nh.param("distance_flag", _dist_flag, false);

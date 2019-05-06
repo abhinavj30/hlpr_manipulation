@@ -2,8 +2,8 @@
 <launch>
 
     <!-- Setup parameters for the IK service -->
-    <arg name="base_chain" default="linear_actuator_link"/>
-    <arg name="end_chain" default="right_ee_link"/>
+    <arg name="base_chain" default="torso_lift_link"/>
+    <arg name="end_chain" default="l_gripper_finger_link"/>
     <arg name="timeout_in_sec" default="0.005"/>
     <arg name="error" default="1e-5"/>
     <arg name="distance_flag" default="true"/>
